@@ -1,0 +1,15 @@
+.play-pause{
+  width: 10%;
+  height: 50px;
+}
+.play-pause button {
+  height: inherit;
+  border: none;
+  background: transparent;
+  outline: 0;
+  width: inherit;
+  box-sizing: none;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 0;
+}

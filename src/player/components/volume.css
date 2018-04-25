@@ -1,0 +1,39 @@
+.volume {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  outline: 0;
+  position: relative;
+  text-align: center;
+}
+
+.volume-range{
+  position: absolute;
+  background-color: rgba(0,0,0,.5);
+  transform: rotate(-90deg);
+  transform-origin: 0 0;
+  display: none;
+  width: 5rem;
+  /* height: 30px; */
+  bottom: 1px;
+  left: 10px;
+  padding: .25rem;
+}
+
+input[type=range]{
+  cursor: -webkit-grab;
+  width: 100%;
+  vertical-align: middle;
+  /* height: 1.5rem; */
+  border: none;
+}
+
+.volume:hover .volume-range{
+  display: flex;
+}
+.borde{
+  border: solid red 2px;
+}
