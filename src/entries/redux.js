@@ -26,3 +26,13 @@ const store = createStore(
   initialState, // preloadstate
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() //enhancer
 );
+// print the result in the body 
+const $container = document.getElementById('container');
+const playList = store.getState();
+playList.forEach( (item)=>{
+  // console.log(item, 'elementos');
+  const p = document.createElement('p');
+  p.innerText = item.title;
+  $container.appendChild(p);
+})
+// console.log(store.getState());
