@@ -7,6 +7,14 @@ function handleSubmit(e){
   e.preventDefault();
   const data = new FormData($form);
   const title = data.get('title');
+
+  // esta es nuestra acción
+  store.dispatch({
+    type:"ADD_SONG",
+    playload:{
+      title
+    }
+  })
   console.log(title);
 }
 const initialState = [
