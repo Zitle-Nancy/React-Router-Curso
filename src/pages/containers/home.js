@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import HomeLayout from '../components/home-layout';
 import Categories from '../../category/components/categories';
 import Related from '../components/related';
@@ -30,7 +31,7 @@ class Home extends Component {
 					<HomeLayout>
 						<Related />
 						<Categories 
-							categories = {this.props.data.categories}
+							categories = {this.props.categories}
 							handleOpenModal={this.handleOpenModal}
 						/>
 						{this.state.modalVisible &&
@@ -50,4 +51,19 @@ class Home extends Component {
 	}
 }
 
-export default Home;
+/** 
+ * @function mapStateToProps
+ * Recibe nuestro estado y nuestras propiedades, que vamos a usar
+ * en nuestra UI
+*/
+function mapStateToProps(store, props) {
+	return{
+		categories:store.data.categories
+	}	
+}
+/** 
+ * @function connect
+ * Recibe una función como parametro, donde especificamos los datos
+ * que necesitamos y los obtenemos del state
+*/
+export default connect(mapStateToProps)(Home);

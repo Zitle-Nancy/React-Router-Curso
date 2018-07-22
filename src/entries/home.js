@@ -2,7 +2,37 @@ import React from 'react';
 import { render } from 'react-dom'; //Una forma de hacerlo
 import Home from  '../pages/containers/home';
 import data from '../api.json';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+ 
+/** 
+ * @const initialState
+ * defines el modelo de dato que vas a usar
+*/
+
+const initialState = {
+  "data": {
+    ...data
+  }
+}
+
+const store = createStore(
+  (state) => state,
+  initialState,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() //enhancer
+)
 
 const homeContainer = document.getElementById('home-container');
 
-render( <Home data = {data} /> , homeContainer);
+render(
+  /** 
+   * @component Provider
+   * Hereda elementpos al componente hijo
+  */
+  <Provider store={store}>
+    <Home />
+  </Provider>, 
+  homeContainer
+);
+
+
