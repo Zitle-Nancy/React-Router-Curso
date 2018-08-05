@@ -1,14 +1,25 @@
 import React, { Component } from 'react';
 import Search from '../components/search';
+import { connect } from 'react-redux';
 
-export default class SearchContainer extends Component{
+class SearchContainer extends Component{
 	state = {
 		value:'Luis fonsi'
 	}
 	/* Ya tenemos acceso a nuestro elemento y a su valor */
 	handleSumbit = event => {
 		event.preventDefault();
-		console.log(this.input.value , 'submit');
+		// console.log(this.input.value , 'submit');
+		/**
+		 * @description type:'SEARCH_VIDEO'
+		 * es la acción que en reducer vamos a utilizar
+		 */
+		this.props.dispatch({
+			type: 'SEARCH_VIDEO',
+			payload:{
+				query:this.input.value
+			}
+		})
 	}
  	/* 
 		 le asignamos el elemento a una variable dentro de nuestra 
@@ -37,3 +48,9 @@ export default class SearchContainer extends Component{
 		)
 	}
 };
+/**
+ * @description connect()
+ * Conectamos nuestro componente con connect y asi
+ * podemos hacer uso de las propiedades que connect nos brinda
+ */
+export default connect()(SearchContainer);
