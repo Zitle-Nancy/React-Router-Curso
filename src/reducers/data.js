@@ -6,10 +6,19 @@ function data(state, action){
    */
   switch(action.type){
     case 'SEARCH_VIDEO': {
-      const list = state.data.categories[2].playlist;
-      const results = list.filter((item)=>{
-        return item.author.includes(action.payload.query);
+      /**
+       * @description results
+       * preguntar si se pueden concatenar estas funciones
+       * y porque el return no funciona
+       */
+      const results = state.data.categories.map( list =>{
+        return list.playlist.filter( item =>{
+          // console.log(item.author);
+          // console.log(item.author.includes(action.payload.query));
+          return item.author.includes(action.payload.query);
+        }) 
       })
+
       return {
         ...state,
         search:results
