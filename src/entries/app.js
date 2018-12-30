@@ -1,6 +1,8 @@
-import React from 'react';
+import React,{ Fragment } from 'react';
 import { render } from 'react-dom'; //Una forma de hacerlo
+import { BrowserRouter } from 'react-router-dom';
 import Home from  '../pages/containers/home';
+import Header from '../pages/components/header';
 import data from '../api.json';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
@@ -30,10 +32,13 @@ render(
    * @component Provider
    * Hereda elementpos al componente hijo
   */
-  <Provider store={store}>
-    <Home />
-  </Provider>, 
+ <BrowserRouter>
+    <Provider store={store}>
+      <Fragment>
+        <Home />
+        <Header />
+      </Fragment>
+    </Provider>
+  </BrowserRouter>, 
   homeContainer
 );
-
-
