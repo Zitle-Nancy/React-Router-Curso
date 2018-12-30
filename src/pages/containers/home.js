@@ -20,33 +20,34 @@ class Home extends Component {
 			media /*  solo media porque se llaman igual ECMS6 */
 		})
 	}
-	handleCloseModalClick = (event) => {
+	handleCloseModalClick = () => {
 		this.setState({
 			modalVisible: false,
 		})
 	}
 	render(){
 		return(
-				<HandleError>
-					<HomeLayout>
-						<Related />
-						<Categories 
-							categories = {this.props.categories}
-							handleOpenModal={this.handleOpenModal}
-						/>
-						{this.state.modalVisible &&
-							<ModalContainer>
-								<Modal handleClick = {this.handleCloseModalClick}>
-									<VideoPlayer 
-										autoplay={true}
-										src={this.state.media.src}
-										title={this.state.media.title}
-									/>
-								</Modal>
-							</ModalContainer>
-						}
-					</HomeLayout>
-				</HandleError>
+			<HandleError>
+				<HomeLayout>
+					<Related />
+					<Categories 
+						categories = {this.props.categories}
+						handleOpenModal={this.handleOpenModal}
+						search = {this.props.search}
+					/>
+					{this.state.modalVisible &&
+						<ModalContainer>
+							<Modal handleClick = {this.handleCloseModalClick}>
+								<VideoPlayer 
+									autoplay={true}
+									src={this.state.media.src}
+									title={this.state.media.title}
+								/>
+							</Modal>
+						</ModalContainer>
+					}
+				</HomeLayout>
+			</HandleError>
 			)
 	}
 }
@@ -56,9 +57,10 @@ class Home extends Component {
  * Recibe nuestro estado y nuestras propiedades, que vamos a usar
  * en nuestra UI
 */
-function mapStateToProps(store, props) {
+function mapStateToProps(state, props) {
 	return{
-		categories:store.data.categories
+		categories:state.data.categories,
+		search:state.search
 	}	
 }
 /** 
