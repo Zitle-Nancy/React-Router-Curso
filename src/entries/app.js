@@ -1,7 +1,8 @@
 import React,{ Fragment } from 'react';
 import { render } from 'react-dom'; //Una forma de hacerlo
-import { BrowserRouter } from 'react-router-dom';
-import Home from  '../pages/containers/home';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Home from '../pages/components/home';
+import Videos from  '../pages/containers/videos';
 import Header from '../pages/components/header';
 import data from '../api.json';
 import { createStore } from 'redux';
@@ -35,8 +36,15 @@ render(
  <BrowserRouter>
     <Provider store={store}>
       <Fragment>
-        <Home />
         <Header />
+        <Route exact path='/' component={Home} />
+        {/** como seria usando la propiedad children 
+        <Route exact path='/videos'> <h1>Videos :)</h1></Route>
+        */}
+        {/* usando render
+          <Route exact path='/videos' render={(props)=>(<h1>Videos :)</h1>)}/>
+        */}
+        <Route exact path='/videos' component={Videos}/>
       </Fragment>
     </Provider>
   </BrowserRouter>, 

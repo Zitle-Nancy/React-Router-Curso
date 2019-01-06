@@ -59,3 +59,13 @@ sin actualizar la página. También se puede renderizar muchas vistas al mismo t
 5. strict: recibe un booleano, sirve para marcar si dirige a una ruta estricta.
 
 6. location: sirve para poder hacer la comparación de isActive con alguna otra ruta.
+
+### ```<Route>``` Nos sirve para cambiar la interfaz de acuerdo a la url que tengamos en el navegador.Algunas de sus propiedades son: 
+
+1. component: El componente que se va a renderizar
+2. path: Es la ruta en donde se va a renderizar nuestro componente.
+3. render: Es otra opción para renderizar el componente pero en forma de función también puedes pasarle las props, como parametros.
+4. children:Son los hijos o componentes que tenga anidados.
+5. exact: Recibe un valor booleano, si le indicas que es **verdadero** solo harà **match** si la ruta coincide exactamente con la ubicación, y **no hará caso a ninguna sub-ruta**.
+6. strict: Recibe un valor boolenao,  si le indicas que es **verdadero** solo hará **match** si la ruta a la que te diriges es idéntica a la ruta de Route.
+7. sensitive: Recibe un booleano, si le indicas que es **verdadero** activara el **case sensitive** para la ruta.
