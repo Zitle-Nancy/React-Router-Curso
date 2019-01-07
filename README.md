@@ -30,6 +30,8 @@ sin actualizar la página. También se puede renderizar muchas vistas al mismo t
 
 ### ```<Link>``` nos ayuda a la navegación
 
+😱 Si no tuvieramos un manejador de estados (redux o mobx), podemos usar el que nos brinda Route, en        ```<Link>```
+
 1. to : Es similar a un un _href_, puede recibir un string o un objeto.
 
       El _string_ indica la  ruta a donde se va a dirigir
