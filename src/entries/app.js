@@ -1,12 +1,14 @@
 import React,{ Fragment } from 'react';
 import { render } from 'react-dom'; //Una forma de hacerlo
 import { BrowserRouter, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import Home from '../pages/components/home';
+import Contacto from '../pages/components/contacto';
 import Videos from  '../pages/containers/videos';
 import Header from '../pages/components/header';
 import data from '../api.json';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
+
 import reducer from '../reducers/data';
 /** 
  * @const initialState
@@ -45,6 +47,7 @@ render(
           <Route exact path='/videos' render={(props)=>(<h1>Videos :)</h1>)}/>
         */}
         <Route exact path='/videos' component={Videos}/>
+        <Route exact path='/contacto' component={Contacto}/>
       </Fragment>
     </Provider>
   </BrowserRouter>, 
