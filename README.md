@@ -71,3 +71,8 @@ sin actualizar la página. También se puede renderizar muchas vistas al mismo t
 5. exact: Recibe un valor booleano, si le indicas que es **verdadero** solo harà **match** si la ruta coincide exactamente con la ubicación, y **no hará caso a ninguna sub-ruta**.
 6. strict: Recibe un valor boolenao,  si le indicas que es **verdadero** solo hará **match** si la ruta a la que te diriges es idéntica a la ruta de Route.
 7. sensitive: Recibe un booleano, si le indicas que es **verdadero** activara el **case sensitive** para la ruta.
+
+### ```<Switch>```  Representa el primer elemento secundario <Route> o <Redirect> que coincide con la ubicación.
+
+### ```<Redirect>``` Este componente nos ayudara para realizar un redireccionamiento en el navegador, sus principales parámetros son **from** y **to** que sirven para indicar de que ruta van a redirigir hacía que ruta van a realizar el redireccionamiento.
+

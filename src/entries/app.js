@@ -1,6 +1,7 @@
 import React,{ Fragment } from 'react';
 import { render } from 'react-dom'; //Una forma de hacerlo
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Switch } from 'react-router-dom';
+import { Route, Redirect } from 'react-router'
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import Home from '../pages/components/home';
@@ -49,6 +50,7 @@ render(
             <Route exact path='/videos' render={(props)=>(<h1>Videos :)</h1>)}/>
           */}
           <Route exact path='/videos' component={Videos}/>
+          <Redirect from='/v' to='/videos'/>
           <Route exact path='/contacto' component={Contacto}/>
           <Route component={NotFound} />
         </Switch>
