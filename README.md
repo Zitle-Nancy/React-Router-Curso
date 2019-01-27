@@ -62,7 +62,8 @@ sin actualizar la página. También se puede renderizar muchas vistas al mismo t
 
 6. location: sirve para poder hacer la comparación de isActive con alguna otra ruta.
 
-### ```<Route>``` Nos sirve para cambiar la interfaz de acuerdo a la url que tengamos en el navegador.Algunas de sus propiedades son: 
+### ```<Route>``` 
+Nos sirve para cambiar la interfaz de acuerdo a la url que tengamos en el navegador.Algunas de sus propiedades son: 
 
 1. component: El componente que se va a renderizar
 2. path: Es la ruta en donde se va a renderizar nuestro componente.
@@ -72,7 +73,12 @@ sin actualizar la página. También se puede renderizar muchas vistas al mismo t
 6. strict: Recibe un valor boolenao,  si le indicas que es **verdadero** solo hará **match** si la ruta a la que te diriges es idéntica a la ruta de Route.
 7. sensitive: Recibe un booleano, si le indicas que es **verdadero** activara el **case sensitive** para la ruta.
 
-### ```<Switch>```  Representa el primer elemento secundario <Route> o <Redirect> que coincide con la ubicación.
+### ```<Switch>```  
+Representa el primer elemento secundario <Route> o <Redirect> que coincide con la ubicación.
 
-### ```<Redirect>``` Este componente nos ayudara para realizar un redireccionamiento en el navegador, sus principales parámetros son **from** y **to** que sirven para indicar de que ruta van a redirigir hacía que ruta van a realizar el redireccionamiento.
+### ```<Redirect>``` 
+Este componente nos ayudara para realizar un redireccionamiento en el navegador, sus principales parámetros son **from** y **to** que sirven para indicar de que ruta van a redirigir hacía que ruta van a realizar el redireccionamiento.
 
+### ```<Prompt>``` 
+Este componente hace una validación antes de que el usuario deje (abandone) la página, esto es muy común cuando se esta llenando un formulario, haciendo una búsqueda, etc.
+Los parámetros que recibe son: **when** el cual recibe un booleano para indicar si muestra el mensaje del navegador y **message** recibe un string que será el mensaje que le mostremos al usuario.

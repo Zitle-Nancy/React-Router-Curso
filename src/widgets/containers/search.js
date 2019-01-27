@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 
 class SearchContainer extends Component{
 	state = {
-		value:'Luis fonsi'
+		value:'',
+		Prompt:false
 	}
 	/* Ya tenemos acceso a nuestro elemento y a su valor */
 	handleSumbit = event => {
@@ -34,16 +35,19 @@ class SearchContainer extends Component{
 	*/
 	handleInputChange = event => {
 		this.setState({
-			value: event.target.value.replace(' ','-')
+			value: event.target.value.replace(' ','-'),
+			Prompt: !!(event.target.value.length)
 		})
 	}
 	render(){
+		console.log(this.state.Prompt)
 		return(
 				<Search 
 					setRef={this.setInputRef}
 					handleSumbit={this.handleSumbit}
 					handleChange={this.handleInputChange}
 					value={this.state.value}
+					Prompt={this.state.Prompt}
 				/>
 		)
 	}
