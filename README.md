@@ -82,3 +82,7 @@ Este componente nos ayudara para realizar un redireccionamiento en el navegador,
 ### ```<Prompt>``` 
 Este componente hace una validación antes de que el usuario deje (abandone) la página, esto es muy común cuando se esta llenando un formulario, haciendo una búsqueda, etc.
 Los parámetros que recibe son: **when** el cual recibe un booleano para indicar si muestra el mensaje del navegador y **message** recibe un string que será el mensaje que le mostremos al usuario.
+
+### Diploma
+
+![Diploma](./images/diploma.png)
